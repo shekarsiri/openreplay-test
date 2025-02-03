@@ -30,9 +30,9 @@ jobs:
 
       - name: Run Cypress Tests
         env:
-          CYPRESS_BASE_URL: $BASE_URL
-          CYPRESS_EMAIL: $EMAIL
-          CYPRESS_PASSWORD: $PASSWORD
+          BASE_URL: $BASE_URL
+          EMAIL: $EMAIL
+          PASSWORD: $PASSWORD
         run: yarn cypress run
 
       - name: Upload Cypress Videos (On Failure)
