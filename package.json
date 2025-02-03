@@ -1,0 +1,12 @@
+{
+  "name": "or-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cypress": "^1.1.6",
+    "cypress": "^14.0.1",
+    "dotenv": "^16.4.7",
+    "typescript": "^5.7.3"
+  }
+}
