@@ -29,12 +29,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Generate .env File for dotenv
-        run: |
-          echo "BASE_URL=${{ vars.BASE_URL }}" >> .env
-          echo "EMAIL=${{ vars.EMAIL }}" >> .env
-          echo "PASSWORD=${{ vars.PASSWORD }}" >> .env
-
       - name: Run Cypress Tests
         run: yarn cypress run
 
