@@ -6,6 +6,7 @@ on:
       - main
       - develop
   pull_request:
+  workflow_dispatch:
 
 jobs:
   cypress-run:
@@ -30,9 +31,9 @@ jobs:
 
       - name: Run Cypress Tests
         env:
-          BASE_URL: $BASE_URL
-          EMAIL: $EMAIL
-          PASSWORD: $PASSWORD
+          BASE_URL: ${{ env.BASE_URL }}
+          EMAIL: ${{ env.EMAIL }}
+          PASSWORD: ${{ env.PASSWORD }}
         run: yarn cypress run
 
       - name: Upload Cypress Videos (On Failure)
