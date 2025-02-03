@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      BASE_URL: ${{ vars.BASE_URL }}
-      EMAIL: ${{ vars.EMAIL }}
-      PASSWORD: ${{ vars.PASSWORD }}
+      BASE_URL: ${{ secrets.BASE_URL }}
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWORD: ${{ secrets.PASSWORD }}
 
     steps:
       - name: Checkout Repository
