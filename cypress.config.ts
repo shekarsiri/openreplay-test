@@ -10,6 +10,8 @@ export default defineConfig({
             email: process.env.EMAIL,
             password: process.env.PASSWORD,
         },
+        video: true,
+        videoCompression: 32,
         setupNodeEvents(on, config) {
 
         },
