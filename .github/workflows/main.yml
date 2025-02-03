@@ -29,16 +29,13 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Verify Environment Variables
+      - name: Generate .env File for dotenv
         run: |
-          echo "BASE_URL: $BASE_URL"
-          if [ -z "$BASE_URL" ]; then echo "BASE_URL is not set" && exit 1; fi
+          echo "BASE_URL=${{ vars.BASE_URL }}" >> .env
+          echo "EMAIL=${{ vars.EMAIL }}" >> .env
+          echo "PASSWORD=${{ vars.PASSWORD }}" >> .env
 
       - name: Run Cypress Tests
-        env:
-          BASE_URL: $BASE_URL
-          EMAIL: $EMAIL
-          PASSWORD: $PASSWORD
         run: yarn cypress run
 
       - name: Upload Cypress Videos (On Failure)
