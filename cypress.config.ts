@@ -12,6 +12,7 @@ export default defineConfig({
         },
         video: true,
         videoCompression: 32,
+        trashAssetsBeforeRuns: false,
         setupNodeEvents(on, config) {
 
         },
