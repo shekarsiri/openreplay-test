@@ -29,18 +29,8 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Verify Environment Variables
-        run: |
-          if [ -z "$BASE_URL" ]; then echo "BASE_URL is not set" && exit 1; fi
-        shell: bash
-
       - name: Run Cypress Tests
-        env:
-          BASE_URL: $BASE_URL
-          EMAIL: $EMAIL
-          PASSWORD: $PASSWORD
         run: yarn cypress run
-        shell: bash
 
       - name: Upload Cypress Videos (On Failure)
         if: failure()
@@ -48,7 +38,6 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos/
-          shell: bash
 
       - name: Upload Cypress Screenshots (On Failure)
         if: failure()
@@ -56,6 +45,5 @@ jobs:
         with:
           name: cypress-screenshots
           path: cypress/screenshots/
-          shell: bash
         
 
